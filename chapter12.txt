@@ -1,0 +1,7 @@
+#Biliografia
+
+___
+
+-  Fundamentos de Sistemas de Bases de Datos 5a Edici&#243;n
+-  https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos
+-  http://www.sinnexus.com/business_intelligence/datamining.aspx

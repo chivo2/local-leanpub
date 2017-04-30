@@ -1,0 +1,47 @@
+#Agrupamiento
+
+La tarea de miner&#237;a de datos para la clasificaci&#243;n anterior realiza el particionado de los datos bas&#225;ndose en el
+uso de una muestra de ejemplo clasificada previamente. Sin embargo, a veces resulta &#250;til particionar los datos
+sin disponer de una muestra de entrenamiento; a esto tambi&#233;n se lo conoce como aprendizaje no supervisado.
+Por ejemplo, en temas de negocio, puede ser importante establecer grupos de clientes que tengan los
+mismos patrones de compra o, en medicina, puede ser importante establecer grupos de pacientes que muestren
+las mismas reacciones ante los medicamentos prescritos. **El objetivo del agrupamiento es situar los
+registros en grupos, de forma que los registros de un grupo sean similares a los dem&#225;s y distintos a los registros
+de otros grupos. Los grupos son, por lo general, disjuntos.**
+Una faceta importante del agrupamiento es la funci&#243;n de semejanza utilizada. Cuando se trata de datos num&#233;ricos,
+se utiliza habitualmente una funci&#243;n de semejanza basada en la distancia. Por ejemplo, se puede usar la
+distancia eucl&#237;dea para medir la semejanza. Tomemos dos puntos de datos n-dimensionales (registros) fj y f k .
+Podemos asumir que el valor de la i-&#233;sima dimensi&#243;n es f j &#241; y fk&#241; para los dos registros. La distancia eucl&#237;dea
+entre los puntos fj y fk en el espacio n-dimensional se calcula como:
+
+![silumaicon virtual](images/9.png)
+
+
+Cuanto m&#225;s peque&#241;a sea la distancia entre dos puntos, mayor es la semejanza. Un algoritmo cl&#225;sico de agrupamiento
+es el algoritmo de las k-medias (k-Means),
+
+![silumaicon virtual](images/10.png)
+
+Algoritmo de agrupamiento k-medias
+Entrada: una base de datos D, con m registros, f l , oo., f m y un n&#250;mero deseado de agrupaciones k
+Salida: conjunto de k agrupaciones que minimiza el criterio de error cuadrado
+Inicio
+elegir k registros al azar como centroides para las k agrupaciones;
+REPETIR
+Asignar cada registro, f&#241;, a una agrupaci&#243;n de forma que la distancia entre r&#241;
+y el centroide de la agrupaci&#243;n (media) sea la m&#225;s peque&#241;a entre las k agrupaciones;
+recalcular el centroide (media) para cada agrupaci&#243;n bas&#225;ndose en los registros
+asignados a la agrupaci&#243;n;
+HASTA que no haya cambios;
+Fin;
+El algoritmo comienza eligiendo al azar k registros para representar los centroides (medias), mi' oo., mk' de las
+agrupaciones, el' oo., ek . Todos los registros se colocan en una agrupaci&#243;n en concreto bas&#225;ndose en la distancia
+entre el registro y la media de la agrupaci&#243;n. Si la distancia entre m&#241; y el registro fj es la m&#225;s peque&#241;a
+entre todas las medias de las agrupaciones, entonces el registro fj se sit&#250;a en la agrupaci&#243;n e&#241;. Una vez que
+todos los registros han sido situados en una agrupaci&#243;n, se recalcula la media de cada agrupaci&#243;n. A continuaci&#243;n,
+se repite el proceso examinando nuevamente cada registro y situ&#225;ndolo en la agrupaci&#243;n con la media
+m&#225;s cercana. Es posible que se necesiten varias iteraciones, pero el algoritmo terminar&#225; convergiendo, aunque
+podr&#237;a finalizar en un valor &#243;ptimo local. La condici&#243;n de finalizaci&#243;n es, por lo general, el criterio de
+error cuadrado. Para las agrupaciones el' oo., ek con medias mi' oo., mk' el error se define como:
+
+![silumaicon virtual](images11.png)

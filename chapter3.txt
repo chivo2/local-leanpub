@@ -1,0 +1,89 @@
+#    Arboles de decisi&#243;n 
+
+Un &#225;rbol de decisi&#243;n es un modelo de predicci&#243;n utilizado en el &#225;mbito de la inteligencia artificial. Dada una base de datos se fabrican diagramas de construcciones l&#243;gicas, muy similares a los sistemas de predicci&#243;n basados en reglas, que sirven para representar y categorizar una serie de condiciones que ocurren de forma sucesiva, para la resoluci&#243;n de un problema.
+
+Un &#225;rbol de decisi&#243;n tiene unas entradas las cuales pueden ser un objeto o una situaci&#243;n descrita por medio de un conjunto de atributos y a partir de esto devuelve una respuesta la cual en ultimas es una decisi&#243;n que es tomada a partir de las entradas. Los valores que pueden tomar las entradas y las salidas pueden ser valores discretos o continuos. Se utilizan mas los valores discretos por simplicidad, cuando se utilizan valores discretos en las funciones de una aplicaci&#243;n se denomina clasificaci&#243;n y cuando se utilizan los continuos se denomina regresi&#243;n.
+
+Un &#225;rbol de decisi&#243;n  lleva a cabo un test a medida que este se recorre hacia las hojas para alcanzar as&#237; una decisi&#243;n . El &#225;rbol de decisi&#243;n  suele contener nodos internos, nodos de probabilidad, nodos hojas y arcos. Un nodo interno contiene un test sobre alg&#250;n valor de una de las propiedades. Un nodo de probabilidad indica que debe ocurrir un evento aleatorio de acuerdo a la naturaleza del problema, este tipo de nodos es redondo, los dem&#225;s son cuadrados. Un nodo hoja representa el valor que devolver&#225; el &#225;rbol de decisi&#243;n  y finalmente las ramas brindan los posibles caminos que se tienen de acuerdo a la decisi&#243;n  tomada.
+
+En el dise&#241;o de aplicaciones inform&#225;ticas, un &#225;rbol de decisi&#243;n  indica las acciones a realizar en funci&#243;n del valor de una o varias variables. Es una representaci&#243;n en form&#225;r del &#225;rbol cuyas ramas se bifurcan en funci&#243;n de los valores tomados por las variables y que terminan en una acci&#243;n concreta. Se suele utilizar cuando el numero de condiciones no es muy grande (en tal caso, es mejor utilizar una tabla de decisi&#243;n ).
+
+En otras palabras un &#225;rbol de decisi&#243;n  es una forma gr&#225;fica y anal&#237;tica de representar todos los eventos (sucesos) que pueden surgir a partir de una decisi&#243;n  asumida en cierto momento.
+ Nos ayudan a tomar la decisi&#243;n  mas acertada, desde un punto de vista probabilistico, ante un abanico de posibles decisi&#243;n es. Permite desplegar visualmente un problema y organizar el trabajo de c&#225;lculos que deben realizarse.
+
+De forma mas concreta, refiri&#233;ndonos al &#225;mbito empresarial, podemos decir que los arboles de decisi&#243;n  son diagramas de decisi&#243;n es secuenciales nos muestran sus posibles resultados. Estos ayudan a las empresas a determinar cuales son sus opciones al mostrarles las distintas decisi&#243;n es y sus resultados. La opcion que evita una p&#233;rdida o produce un beneficio extra tiene un valor. La habilidad de crear una opci&#243;n, por lo tanto, tiene un valor que puede ser comprado o vendido.
+
+
+![silumaicon virtual](images/1.png)
+
+
+Pasos para el An&#225;lisis del &#225;rbol de Decisi&#243;n 
+
+- Definir el problema.
+- Dibujar el &#225;rbol de decisi&#243;n .
+- Asignar probabilidades a los eventos aleatorios.
+- Estimar los resultados para cada combinaci&#243;n posible de alternativas.
+- Resolver el problema obteniendo como soluci&#243;n la ruta que proporcione la pol&#237;tica optima.
+
+
+
+**Ejemplo**
+
+Una compa&#241;ia de seguros nos ofrece una indemnizaci&#243;n por accidente de 210.000$. Si no aceptamos la oferta y decidimos ir a juicio podemos obtener 185.000$, 415.000$ o 580.000$ dependiendo de las alegaciones que el juez considere aceptables. Si perdemos el juicio, debemos pagar las costas que ascienden a 30.000$. Sabiendo que el 70% de los juicios se gana, y de Estos, en el 50% se obtiene la menor indemnizaci&#243;n, en el 30% la intermedia y en el 20% la mas alta, determinar la decisi&#243;n  mas acertada.
+
+![silumaicon virtual](images/2.png)
+
+
+## Algoritmo ID3.##
+
+El algoritmo que se ha implementado es el llamado ID3, creado por J. R. Quinlan, y que emplea un procedimiento de arrriba a abajo haciendo un recorrido voraz por el espacio de las posibles ramifiaciones sin backtracking. Para ello, ID3 hace uso de conceptos como entropia y ganancia de informacion.
+
+El algoritmo ID3 es utilizado dentro del ambito de la inteligencia artificial. Su uso se engloba en la b&#250;squeda de hip&#243;tesis o reglas en El, dado un conjunto de ejemplos.
+
+El conjunto de ejemplos deber&#225; estar conformado por una serie de tuplas de valores, cada uno de ellos denominados atributos, en el que uno de ellos, ( el atributo a clasificar ) es el objetivo, el cual es de tipo binario ( positivo o negativo, si o no, valido o invalido, etc. ).
+De esta forma el algoritmo trata de obtener las hipotesis que clasifiquen ante nuevas instancias, si dicho ejemplo va a ser positivo o negativo.
+
+ID3 realiza esta labor mediante la construcci&#243;n de un &#225;rbol de decisi&#243;n .
+Los elementos son:
+
+- Nodos: Los cuales contendr&#225;n atributos.
+- Arcos: Los cuales contienen valores posibles del nodo padre.
+- Hojas: Nodos que clasifican el ejemplo como positivo o negativo
+
+##Algoritmo C4.5.##
+
+C4.5 es un algoritmo usado para generar un &#225;rbol de decisi&#243;n . Fue desarrollado por Ross Quinlan en 1993 y es una extensi&#243;n del algoritmo ID3 desarrollado tambi&#233;n por Quinlan previamente. Los arboles de decisi&#243;n  generados con C4.5 se pueden usar para clasificaci&#243;n, por ello es conocido como un clasificador estad&#237;stico. Las mejoras que propone C4.5 frente a ID3 son:
+
+-    Manejo de los datos perdidos. A la hora de construir el &#225;rbol se ignoran los campos perdidos, de manera que solo se tienen en cuenta los registros que tienen valor para ese atributo.
+-    Posibilidad de trabajar con datos continuos. Para poder trabajar con datos continuos, C4.5 divide los datos en rangos en base a los valores encontrados en el conjunto de entrenamiento.
+-    Propone soluciones para el sobre aprendizaje, pudiendo usar pre-poda (se decide cuando dejar de subdividir el &#225;rbol) y post-poda (se construye el &#225;rbol y despu&#233;s se poda).
+
+Caracter&#237;sticas del algoritmo C4.5
+
+Las principales caracter&#237;sticas del algoritmo son las siguientes:
+
+- Permite trabajar con valores continuos para los atributos, separando los posibles resultados en 2 ramas Ai<=Z y Ai>Z; siendo Z un umbral escogido anteriormente.
+- Los arboles son menos frondosos, ya que cada hoja cubre una distribuci&#243;n de clases, no una clase en particular.
+- Utiliza el mEtodo "divide y vencer&#225;s" para generar el &#225;rbol de decisi&#243;n  inicial a partir de un conjunto de datos de entrenamiento.
+Se basan en la utilizaci&#243;n del criterio de proporci&#243;n de ganancia. De esta manera se consigue evitar que las variables con mayor numero de categor&#237;as salgan beneficiadas en la selecci&#243;n.
+Es recursivo.
+
+**Funcionamiento**
+
+El algoritmo considera todas las pruebas posibles que pueden dividir el conjunto de datos y selecciona la prueba que le haya generado la mayor ganancia de informaci&#243;n. Para cada atributo discreto, se considera una prueba con n resultados, siendo n el numero de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza una prueba binaria (1,0) sobre cada uno de los valores que toma el atributo en los datos. En cada nodo, el sistema debe decidir que prueba escoge para dividir los datos. Seg&#250;n Espino (2005) los tres tipos de pruebas posibles propuestas para el C4.5 son:
+
+- La prueba est&#225;ndar para las variables discretas, con un resultado y una rama para cada valor posible de la variable.
+ 
+- Una prueba mas compleja, basada en una variable discreta, en donde los valores posibles son asignados a un numero variable de grupos con un resultado posible para cada grupo,en lugar de para cada valor. 
+Si una variable A tiene valores num&#233;ricos continuos, se realiza una prueba binaria con resultados A<=Z y A>Z, para lo cual debe determinar el valor limite Z.
+- Todas estas pruebas se eval&#250;an observando el ratio de ganancia resultante de la divisi&#243;n de datos que producen. El ratio de ganancia puede calcularse mediante la siguiente formula:
+Ademas, es &#250;til agregar una restricci&#243;n adicional. Esta restricci&#243;n consiste en que, para cualquier divisi&#243;n, al menos dos de los subconjuntos Ci deben contener un numero razonable de casos. Esta restricci&#243;n, que evita las subdivisiones casi triviales, es tenida en cuenta solamente cuando el conjunto C es peque&#241;o. 
+
+Representaci&#243;n  general del algoritmo en pseudocodigo
+
+-    Comprobar los casos base.
+-    Para cada atributo a:
+-    Encontrar la ganancia de informaci&#243;n normalizada de la division de a.
+-    Dejar que a_best sea el atributo con la ganancia de informaci&#243;n normalizada mas alta
+-    Crear un nodo de decisi&#243;n  que divida a_best.
+-    Repetir en las sublistas obtenidas por divisi&#243;n de a_best, y agregar estos nodos como hijos de nodo.

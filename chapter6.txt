@@ -1,0 +1,50 @@
+#	Datawarehouse 
+
+
+
+Un **Datawarehouse** es una base de datos corporativa que se caracteriza por integrar y depurar informaci&#243;n de una o m&#225;s fuentes distintas, para luego procesarla permitiendo su an&#225;lisis desde infinidad de pespectivas y con grandes velocidades de respuesta. La creaci&#243;n de un datawarehouse representa en la mayor&#237;a de las ocasiones el primer paso, desde el punto de vista t&#233;cnico, para implantar una soluci&#243;n completa y fiable de Business Intelligence.
+
+La ventaja principal de este tipo de bases de datos radica en las estructuras en las que se almacena la informaci&#243;n (modelos de tablas en estrella, en copo de nieve, cubos relacionales... etc). Este tipo de persistencia de la informaci&#243;n es homog&#233;nea y fiable, y permite la consulta y el tratamiento jerarquizado de la misma (siempre en un entorno diferente a los sistemas operacionales).
+
+
+![silumaicon virtual](images/4.png)
+
+El t&#233;rmino Datawarehouse fue acu&#241;ado por primera vez por Bill Inmon, y se traduce literalmente como almac&#233;n de datos. No obstante, y como cabe suponer, es mucho m&#225;s que eso. Seg&#250;n defini&#243; el propio Bill Inmon, un datawarehouse se caracteriza por ser:
+
+*   Integrado: los datos almacenados en el datawarehouse deben integrarse en una estructura consistente, por lo que las inconsistencias existentes entre los diversos sistemas operacionales deben ser eliminadas. La informaci&#243;n suele estructurarse tambi&#233;n en distintos niveles de detalle para adecuarse a las distintas necesidades de los usuarios.
+
+*  Tem&#225;tico: s&#243;lo los datos necesarios para el proceso de generaci&#243;n del conocimiento del negocio se integran desde el entorno operacional. Los datos se organizan por temas para facilitar su acceso y entendimiento por parte de los usuarios finales. Por ejemplo, todos los datos sobre clientes pueden ser consolidados en una &#250;nica tabla del datawarehouse. De esta forma, las peticiones de informaci&#243;n sobre clientes ser&#225;n m&#225;s f&#225;ciles de responder dado que toda la informaci&#243;n reside en el mismo lugar.
+
+*   Hist&#243;rico: el tiempo es parte impl&#237;cita de la informaci&#243;n contenida en un datawarehouse. En los sistemas operacionales, los datos siempre reflejan el estado de la actividad del negocio en el momento presente. Por el contrario, la informaci&#243;n almacenada en el datawarehouse sirve, entre otras cosas, para realizar an&#225;lisis de tendencias. Por lo tanto, el datawarehouse se carga con los distintos valores que toma una variable en el tiempo para permitir comparaciones.
+
+*   No vol&#225;til: el almac&#233;n de informaci&#243;n de un datawarehouse existe para ser le&#237;do, pero no modificado. La informaci&#243;n es por tanto permanente, significando la actualizaci&#243;n del datawarehouse la incorporaci&#243;n de los &#250;ltimos valores que tomaron las distintas variables contenidas en &#233;l sin ning&#250;n tipo de acci&#243;n sobre lo que ya exist&#237;a.
+
+Otra caracter&#237;stica del datawarehouse es que contiene metadatos, es decir, datos sobre los datos. Los metadatos permiten saber la procedencia de la informaci&#243;n, su periodicidad de refresco, su fiabilidad, forma de c&#225;lculo... etc.
+
+Los metadatos ser&#225;n los que permiten simplificar y automatizar la obtenci&#243;n de la informaci&#243;n desde los sistemas operacionales a los sistemas informacionales.
+
+Los objetivos que deben cumplir los metadatos, seg&#250;n el colectivo al que va dirigido, son:
+
+*   Dar soporte al usuario final, ayud&#225;ndole a acceder al datawarehouse con su propio lenguaje de negocio, indicando qu&#233; informaci&#243;n hay y qu&#233; significado tiene. Ayudar a construir consultas, informes y an&#225;lisis, mediante herramientas de Business Intelligence como DSS, EIS o CMI.
+
+*   Dar soporte a los responsables t&#233;cnicos del datawarehouse en aspectos de auditor&#237;a, gesti&#243;n de la informaci&#243;n hist&#243;rica, administraci&#243;n del datawarehouse, elaboraci&#243;n de programas de extracci&#243;n de la informaci&#243;n, especificaci&#243;n de las interfaces para la realimentaci&#243;n a los sistemas operacionales de los resultados obtenidos... etc.
+
+Por &#250;ltimo, destacar que para comprender &#237;ntegramente el concepto de datawarehouse, es importante entender cual es el proceso de construcci&#243;n del mismo, denominado ETL (Extracci&#243;n, Transformaci&#243;n y Carga), a partir de los sistemas operaciones de una compa&#241;&#237;a:
+
+*  Extracci&#243;n: obtenci&#243;n de informaci&#243;n de las distintas fuentes tanto internas como externas.
+
+*  Transformaci&#243;n: filtrado, limpieza, depuraci&#243;n, homogeneizaci&#243;n y agrupaci&#243;n de la informaci&#243;n.
+
+*  Carga: organizaci&#243;n y actualizaci&#243;n de los datos y los metadatos en la base de datos.
+
+**Principales aportaciones de un datawarehouse**
+
+*  Proporciona una herramienta para la toma de decisiones en cualquier &#225;rea funcional, bas&#225;ndose en informaci&#243;n integrada y global del negocio.
+
+*  Facilita la aplicaci&#243;n de t&#233;cnicas estad&#237;sticas de an&#225;lisis y modelizaci&#243;n para encontrar relaciones ocultas entre los datos del almac&#233;n; obteniendo un valor a&#241;adido para el negocio de dicha informaci&#243;n.
+
+*  Proporciona la capacidad de aprender de los datos del pasado y de predecir situaciones futuras en diversos escenarios.
+
+*  Simplifica dentro de la empresa la implantaci&#243;n de sistemas de gesti&#243;n integral de la relaci&#243;n con el cliente.
+
+*  Supone una optimizaci&#243;n tecnol&#243;gica y econ&#243;mica en entornos de Centro de Informaci&#243;n, estad&#237;stica o de generaci&#243;n de informes con retornos de la inversi&#243;n espectaculares.

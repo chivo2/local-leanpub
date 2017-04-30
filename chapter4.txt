@@ -1,0 +1,55 @@
+#	Perceptron Multicapa 
+
+
+**Historia del perceptron multicapa**
+
+En 1969, Minsky y Papert, demuestran que el perceptron simple y ADALINE no puede resolver problemas no lineales (por ejemplo, XOR). La combinacion de varios perceptrones simples podria resolver ciertos problemas no lineales pero no existia un mecanismo automatico para adaptar los pesos de la capa oculta. Rumelhart y otro autores, en 1986, presentan la "Regla Delta Generalizada" para adaptar los pesos propagando los errores hacia atras, es decir, propagar los erroes hacia las capas ocultas inferiores. De esta forma se consigue trabajar con multiples capas y con funciones de activaci&#243;n no lineales. Se demuestra que el perceptron multicapa es un aproximador universal. Un perceptron multicapa puede aproximar relaciones no lineales entre los datos de entrada y salida. Esta red se ha convertido en una de las arquitecturas mas utilizadas en el momento.
+
+
+![silumaicon virtual](images/3.png)
+
+
+**Caracteristicas del Perceptron Multicapa.**
+
+- Es una de las arquitecturas mas utilizadas para resolver problemas reales.
+
+- Se eval&#250;a un conjunto de datos de entradas y se obtienen valores reales o vectores con valores reales.
+
+- Se diferencia del perceptron simple y ADALINE en que tiene una capa oculta.
+
+- Todas las neuronas se relacionan con todas las neuronas, incluyendo las neuronas de la capa oculta.
+
+**Perceptron Multicapa
+Este modelo se compone de:**
+
+- Capa de entrada: solo se encarga de recibir las se&#241;ales de entrada y propagarla a la siguiente capa.
+
+- Capa de salida: proporciona al exterior la respuesta de la red para cada patr&#243;n de entrada.
+
+- Capas ocultas: realizan un procesamiento no lineal de los datos de entrada.
+
+La propagaci&#243;n de los patrones de entrada en el perceptron multicapa define una relaci&#243;n entre las variables de entrada y variables de salida de la red. Esta relaci&#243;n se obtiene propagando hacia delante los valores de entrada. Cada neurona de la red procesa la informaci&#243;n recibida por sus entradas y produce una respuesta o activaci&#243;n que se propaga, a trav&#233;s de las conexiones correspondientes, a las neuronas de la siguiente capa.
+
+**Aprendizaje en el perceptron multicapa**
+
+1. Se inicializan los pesos y umbrales (valores aleatorios pr&#243;ximos a 0).
+
+2. Se presenta un patr&#243;n "n" de entrenamiento y se propaga hacia la salida, obteniendo la salida de la red "y(n)"
+
+3. Se evalua el error cuadr&#225;tico, "e(n)", cometido por la red para cada patr&#243;n.
+
+4. Se aplica la Regla Delta Generalizada para modificar pesos y umbrales:
+
+Se calculan los valores "d" para todas las neuronas de la capa de salida.
+Se calcula "d" para el resto de neuronas, empezando por la ultima capa oculta y terminando en la capa de entrada.
+Se modifican los pesos y umbrales.
+
+5. Se repiten los pasos 2, 3 y 4 para todo el patron de entrenamiento.
+
+6. Se evalua el error total de la red.
+
+7. Se repite hasta alcanzar el error m&#237;nimo de entrenamiento, realizando "m" ciclos. Se pueden establecer otros criterios de parada:
+
+El error del entrenamiento se estabilice.
+El error de validaci&#243;n se estabilice.
+El error de validaci&#243;n aumente.

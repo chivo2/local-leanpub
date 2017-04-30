@@ -1,0 +1,65 @@
+#Herramientas comerciales de miner&#237;a de datos
+
+
+Actualmente, las herramientas comerciales de miner&#237;a de datos utilizan varias t&#233;cnicas comunes para la
+extracci&#243;n del conocimiento. Entre estas se incluyen las reglas de asociaci&#243;n, el agrupamiento, las redes neuronales,
+ la secuenciaci&#243;n y el an&#225;lisis estad&#237;stico. Ya hemos revisado estos temas con anterioridad. Tambi&#233;n
+se utilizan los &#225;rboles de decisi&#243;n, que son una representaci&#243;n de las reglas utilizadas en la clasificaci&#243;n o en
+el agrupamiento, y los an&#225;lisis estad&#237;sticos, que pueden incluir la regresi&#243;n y muchas otras t&#233;cnicas. Otros productos
+comerciales utilizan t&#233;cnicas avanzadas como los algoritmos gen&#233;ticos, los razonamientos basados en
+casos, las redes Bayesianas, la regresi&#243;n no lineal, la optimizaci&#243;n combinatoria, el emparejamiento de patrones
+y la l&#243;gica difusa. En este cap&#237;tulo ya hemos visto algunas de ellas.
+La mayor&#237;a de las herramientas de miner&#237;a de datos utilizan la interfaz ODBC (Open Database Connectivity,
+Conectividad de base de datos abierta). ODBC es un est&#225;ndar de la industria que trabaja con bases de datos;
+permite el acceso a los datos en la mayor&#237;a de los programas de bases de datos m&#225;s conocidos como Access,
+dBASE, Informix, Oracle y SQL Server. Algunos de estos paquetes de software proporcionan interfaces a programas
+de bases de datos espec&#237;ficas; las m&#225;s comunes son Oracle, Access y SQL Server. La mayor&#237;a de las
+herramientas funcionan en el entorno de Microsoft Windows y unas pocas bajo el sistema operativo UNIX.
+La tendencia es que todos los productos funcionen bajo el entorno de Microsoft Windows. Una de las herramientas,
+Data Surveyor, garantiza compatibilidad con ODMG; consulte el Cap&#237;tulo 21 en el que revisamos el
+est&#225;ndar ODMG orientado a objetos. En general, estos programas realizan procesamiento secuencial en una
+&#250;nica m&#225;quina. Muchos de estos productos trabajan en modo cliente/servidor. Algunos productos incorporan
+procesamiento en paralelo en arquitecturas de c&#225;lculo en paralelo y funcionan como parte de las herramientas
+de proceso anal&#237;tico online (OLAP).
+
+##Interfaz de usuario##
+La mayor&#237;a de las herramientas se ejecutan bajo un entorno de interfaz gr&#225;fica de usuario (GUI). Algunos productos
+incluyen t&#233;cnicas de visualizaci&#243;n sofisticadas para visualizar los datos y las reglas (por ejemplo,
+MineSet de SGI), e incluso son capaces de manipular los datos estando en este modo de forma interactiva.
+Las interfaces en modo texto son poco comunes y aparecen habitualmente en herramientas disponibles en
+UNIX, como Intelligent Miner de IBM.
+
+## Interfaz de programaci&#243;n de aplicaciones##
+Normalmente, la interfaz de programaci&#243;n de aplicaciones (API) es una herramienta opcional. La mayor&#237;a de
+los productos no permiten el uso de sus funciones internas. Sin embargo, algunos de ellos permiten que el programador
+de aplicaciones reutilice su c&#243;digo. Las interfaces m&#225;s comunes son las librer&#237;as C y las librer&#237;as de
+enlace din&#225;mico (DLLs). Algunas herramientas incluyen lenguajes propietarios de comandos de base de
+datos.
+En la Tabla  se muestra una lista de las herramientas de miner&#237;a de datos m&#225;s representativas. A fecha de
+hoy, existen casi cien productos comerciales disponibles a nivel mundial. Entre los productos de fuera de los
+EEUU se encuentran Data Surveyor de los Pa&#237;ses Bajos y Polyanalyst de Rusia.
+
+##Tendencias para el futuro##
+Las herramientas de miner&#237;a de datos se encuentran en constante evoluci&#243;n a partir de las ideas procedentes
+de las &#250;ltimas investigaciones cient&#237;ficas. Muchas de estas herramientas incorporan los &#250;ltimos algoritmos
+tomados de la inteligencia artificial (Al), la estad&#237;stica y la optimizaci&#243;n.
+En este momento, el procesamiento r&#225;pido se realiza mediante t&#233;cnicas modernas de bases de datos (como el
+procesamiento distribuido) en arquitecturas cliente/servidor, en bases de datos en paralelo y en almacenes de
+datos. En el futuro, la tendencia se dirige hacia el desarrollo de funcionalidades en Internet m&#225;s perfeccionadas.
+Adicionalmente, los modelos h&#237;bridos se convertir&#225;n en algo com&#250;n y el procesamiento se realizar&#225; utilizando
+todos los recursos disponibles. El procesamiento sacar&#225; provecho de los entornos de computaci&#243;n
+distribuidos y en paralelo. Este movimiento es especialmente importante ya que las bases de datos modernas
+contienen cantidades de informaci&#243;n muy grandes. No s&#243;lo aumenta el n&#250;mero de bases de datos multimedia,
+sino que adem&#225;s el almacenamiento y la recuperaci&#243;n de im&#225;genes son operaciones lentas. Por otra parte, el
+coste del almacenamiento secundario est&#225; decreciendo; por tanto, resultar&#225; factible el almacenamiento masivo
+de informaci&#243;n incluso para las peque&#241;as compa&#241;&#237;as. De acuerdo con esto, los programas de miner&#237;a de
+datos tendr&#225;n que tratar conjuntos de datos cada vez m&#225;s grandes y cada vez de m&#225;s compa&#241;&#237;as.
+En un futuro cercano, parece que Microsoft Windows NT y UNIX ser&#225;n las plataformas est&#225;ndar, siendo NT
+la dominante. La mayor&#237;a del software de miner&#237;a de datos utilizar&#225; el est&#225;ndar ODBC para extraer datos de
+las bases de datos de negocio; se espera que desaparezcan los formatos propietarios de datos de entrada. Existe
+una clara necesidad de incluir datos no est&#225;ndar, como im&#225;genes y otros datos multimedia, como datos de
+entrada a la miner&#237;a de datos. Sin embargo, el desarrollo de algoritmos para la miner&#237;a de datos no est&#225;ndar
+a&#250;n no ha alcanzado el nivel de madurez suficiente para su comercializaci&#243;n.
+
+![silumaicon virtual](images/12.png)
+

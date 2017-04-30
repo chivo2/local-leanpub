@@ -1,0 +1,88 @@
+#Otras cuestiones en miner&#237;a de datos
+
+##B&#250;squeda de patrones secuenciales##
+La b&#250;squeda de patrones secuenciales se basa en el concepto de secuencia de conjuntos. Suponemos que las
+transacciones del tipo de las de la cesta de la compra que vimos con anterioridad est&#225;n ordenadas por la hora
+en que se realiz&#243; la compra. Esa ordenaci&#243;n mantiene una secuencia de conjuntos. Por ejemplo, {leche, pan,
+zumo}, {pan, huevos}, {galletas, leche, caf&#233;} podr&#237;a ser una secuencia de conjuntos basada en las tres visitas
+del mismo cliente a la tienda. El soporte de una secuencia S de conjuntos es el porcentaje de un conjunto
+dado U de secuencias de las cuales S es una subsecuencia. En este ejemplo, {leche, pan, zumo} {pan, huevos}
+y {pan, huevos} {galletas, leche, caf&#233;} se consideran subsecuencias. El problema de la identificaci&#243;n
+de patrones secuenciales es, por tanto, la b&#250;squeda de todas las sub secuencias a partir de los conjuntos de
+secuencias dados que tienen un soporte m&#237;nimo definido por el usuario. La secuencia SI' S2, S3, ... es una predicci&#243;n
+del hecho de que un cliente que compra el art&#237;culo S n comprar&#225; con probabilidad el art&#237;culo S2, posteriormente
+el S3, etc. Esta predicci&#243;n se basa en la frecuencia (soporte) de esta secuencia en el pasado. Se han
+investigado varios algoritmos de detecci&#243;n de secuencias.
+
+##B&#250;squeda de patrones en series temporales##
+Las series temporales son secuencias de eventos; cada evento puede ser un tipo fijo determinado de transacci&#243;n.
+Por ejemplo, el precio de cierre de una acci&#243;n en bolsa o de un fondo de inversi&#243;n es un evento que se
+produce cada d&#237;a laborable para cada acci&#243;n o fondo. La secuencia de estos valores por acci&#243;n o fondo constituye
+una serie temporal. En una serie temporal, se puede buscar una variedad de patrones analizando secuencias
+y subsecuencias del modo que se mostr&#243; anteriormente. Por ejemplo, podr&#237;amos buscar el periodo durante
+el cual las acciones subieron o se mantuvieron durante n d&#237;as, o podr&#237;amos buscar el cuarto de hora durante
+el cual las acciones sufrieron una fluctuaci&#243;n de no m&#225;s del 1 % sobre el precio anterior de cierre, o podr&#237;amos
+buscar el cuarto de hora durante el cual las acciones sufrieron el mayor porcentaje de ganancia o de p&#233;rdida.
+Podemos comparar las series temporales con el establecimiento de medidas de semejanza para identificar
+las compa&#241;&#237;as cuyas acciones se comportan de forma similar. El an&#225;lisis y la miner&#237;a de series temporales
+es una funcionalidad extendida de la gesti&#243;n de datos temporales.
+
+
+## Regresi&#243;n##
+La regresi&#243;n es una aplicaci&#243;n especial de la regla de clasificaci&#243;n. Si pensamos en una regla de clasificaci&#243;n
+como una funci&#243;n sobre las variables que relaciona a estas variables con una variable de clase objetivo, la
+regla tendr&#225; por nombre regla de regresi&#243;n. Se produce una aplicaci&#243;n gen&#233;rica de la regresi&#243;n cuando, en
+lugar de relacionar una tupla de datos de una relaci&#243;n con una clase determinada, se predice el valor de una
+variable en base a esa tupla. Por ejemplo, tomemos una relaci&#243;n
+PRUEBAS_LAB (ID paciente, prueba 1, prueba 2, ... , prueba_n)
+que contiene valores que son resultados de una serie de n pruebas a un paciente. La variable objetivo que queremos
+predecir es P, la probabilidad de supervivencia del paciente. Seg&#250;n esto, la regla de regresi&#243;n toma esta
+forma:
+(prueba 1 en rango n) y (prueba 2 en rang02) Y ... (prueba n en rango n) =? P = x, o x < P ~ y
+La elecci&#243;n depende de si podemos predecir un valor &#250;nico de P o un rango de valores para P. Si pensamos
+en P como una funci&#243;n:
+P = f(prueba 1, prueba 2, ... , prueba n)
+la funci&#243;n se llamar&#225; funci&#243;n de regresi&#243;n para predecir P. En general, si la funci&#243;n aparece como
+y = f(Xn, Xz, ... , Xn),
+y f es lineal en las variables de dominio Xi' el proceso de derivar f a partir de un conjunto dado de tuplas para
+<Xn, X2, ... , Xn, y> se llama regresi&#243;n lineal. La regresi&#243;n lineal es una t&#233;cnica estad&#237;stica utilizada habitualmente
+para ajustar un conjunto de observaciones o puntos en n dimensiones a la variable objetivo y el
+ an&#225;lisis de regresi&#243;n es una herramienta muy habitual para el an&#225;lisis de los datos en muchos &#225;mbitos de
+investigaci&#243;n. La b&#250;squeda de la funci&#243;n para predecir la variable objetivo es equivalente a la operaci&#243;n de
+miner&#237;a de datos.
+
+##Algoritmos gen&#233;ticos##
+Los algoritmos gen&#233;ticos (GA) son un tipo de procedimientos de b&#250;squeda aleatoria aptos para realizar b&#250;squedas
+s&#243;lidas y adaptativas en un amplio rango de topolog&#237;as de espacios de b&#250;squeda. Fueron modelados
+de acuerdo con la aparici&#243;n adaptativa de las especies biol&#243;gicas mediante mecanismos evolutivos, y fueron
+introducidos por Holland.6
+Los GA se han aplicado con &#233;xito en diversos campos como el an&#225;lisis de im&#225;genes, la planificaci&#243;n y el dise&#241;o
+en ingenier&#237;a.
+Los algoritmos gen&#233;ticos ampl&#237;an la idea de la gen&#233;tica humana del alfabeto de cuatro letras (basado en los
+nucle&#243;tidos A,C,T,G.) del c&#243;digo del ADN humano. La construcci&#243;n de un algoritmo gen&#233;tico implica el desarrollo
+de un alfabeto que codifique las soluciones al problema de decisi&#243;n en t&#233;rminos de cadenas de caracteres
+de ese alfabeto. Las cadenas son equivalentes a individuos. Una funci&#243;n de ajuste define qu&#233; soluciones
+pueden sobrevivir y cu&#225;les no. Se establece una analog&#237;a entre las formas en que se pueden combinar las soluciones
+y la operaci&#243;n cruzada de cortar y combinar cadenas a partir de un padre y una madre. Se proporciona
+una poblaci&#243;n inicial de poblaci&#243;n variada y se desarrolla el juego de la evoluci&#243;n en el cual se producen
+mutaciones entre las cadenas. Se combinan para producir una nueva generaci&#243;n de individuos; los individuos
+m&#225;s aptos sobreviven y mutan hasta que se desarrolla una familia de soluciones apropiadas.
+Las soluciones generadas por los algoritmos gen&#233;ticos (GA) se distinguen de la mayor&#237;a de las otras t&#233;cnicas
+por las siguientes caracter&#237;sticas:
+- Una b&#250;squeda mediante GA utiliza un conjunto de soluciones durante cada generaci&#243;n en lugar de una
+soluci&#243;n &#250;nica
+- La b&#250;squeda en el espacio de cadenas representa una b&#250;squeda en paralelo m&#225;s grande en el espacio
+de soluciones codificadas.
+- La memoria de la b&#250;squeda realizada se representa &#250;nicamente mediante el conjunto de soluciones disponibles
+para una generaci&#243;n.
+- Un algoritmo gen&#233;tico es un algoritmo aleatorio, ya que los algoritmos de b&#250;squeda utilizan operadores
+de probabilidad.
+-  Al progresar de una generaci&#243;n a la siguiente, un GA busca el equilibrio casi &#243;ptimo entre el descubrimiento
+de conocimiento y el rendimiento mediante la manipulaci&#243;n de soluciones codificadas.
+
+Los algoritmos gen&#233;ticos se utilizan para la resoluci&#243;n de problemas y para los problemas de agrupamiento.
+Su capacidad para la resoluci&#243;n de problemas en paralelo proporciona una potente herramienta para la miner&#237;a
+de datos. Entre las desventajas de los GA se encuentran la gran superproducci&#243;n de soluciones individuales,
+el car&#225;cter aleatorio del proceso de b&#250;squeda y el alto requerimiento de proceso de computaci&#243;n. En
+general, mediante los algoritmos gen&#233;ticos es necesario una gran cantidad de proceso de computaci&#243;n para
+obtener resultados significativos

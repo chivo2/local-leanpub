@@ -1,0 +1,206 @@
+#Introducci&#243;n  
+
+
+
+En las bases de datos digitales han crecido en las &#250;ltimas d&#233;cadas con un gran volumen y muy diversa informaci&#243;n. Las empresas, instituciones y organizaciones a menudo toman decisiones basadas en la informaci&#243;n contenida en un conjunto de datos. Un m&#233;todo tradicional para transformar datos en conocimiento es realizar un an&#225;lisis manual por el experto. Este m&#233;todo es costoso, lento y subjetivo. Si el volumen de datos es grande y crece exponencialmente no se pueden conocer sin la ayuda de los ordenadores.
+
+El principal objetivo de la miner&#237;a de datos es resolver problemas analizando los datos que se encuentran en las bases de datos. La base para resolver problemas es analizar los datos hasta encontrar un patron que define las caracter&#237;sticas buscadas se puede usar lenguajes generalistas de consultas como SQL y OLTP de gesti&#243;n. Pero de esta manera solo se obtiene informaci&#243;n resumida de la que previamente se tiene, siendo un procedimiento poco flexible y no utilizable con gran cantidad de datos.
+
+Las herramientas OLAP permiten un peque&#241;o an&#225;lisis descriptivo, adem&#225;s se pueden transformar datos en otros agregados o cruzados, pero no generan reglas, patrones ni pautas. En algunos problemas lo interesante es el conocimiento que puede inferirse de los datos. Con origen en la Estad&#237;stica existen diversas herramientas para el an&#225;lisis De datos. Algunos paquetes estad&#237;sticos pueden inferir comportamiento a partir de los datos, usando modelos estad&#237;sticos param&#233;tricos y no param&#233;tricos. Podr&#237;a considerarse que el origen de la miner&#237;a de datos es la estad&#237;stica.
+
+Se define la miner&#237;a de datos como el proceso de extraer conocimiento &#250;til y comprensible, anteriormente desconocido, desde datos. Luego el objetivo fundamental de la miner&#237;a de datos es hallar modelos inteligibles a partir de los datos. Este proceso debe ser autom&#225;tico o asistido. A partir de los patrones encontrados se pueden tomar propiedades y decisiones del problema dado.
+Resumiendo se podr&#237;a decir que el objetivo de la miner&#237;a de datos es convertir datos en conocimiento. Convertir datos en conocimiento es un objetivo muy amplio y ambicioso. 
+
+En resumen las t&#233;cnicas de la miner&#237;a de datos provienen de la Estad&#237;stica y de la Inteligencia artificial, dichas t&#233;cnicas son algoritmos que se aplican sobre un conjunto de datos para obtener unos resultados.
+    
+
+ 
+___
+**Proceso**
+
+
+
+Un proceso t&#237;pico de miner&#237;a de datos consta de los siguientes pasos generales:
+
+
+
+1. **Selecci&#243;n del conjunto de datos**, tanto en lo que se refiere a las variables objetivo (aquellas que se quiere predecir, calcular o inferir), como a las variables independientes (las que sirven para hacer el c&#225;lculo o proceso), como posiblemente al muestreo de los registros disponibles.
+
+
+2. **An&#225;lisis de las propiedades de los datos**, en especial los histogramas, diagramas de dispersi&#243;n, presencia de valores at&#237;picos y ausencia de datos (valores nulos).
+
+
+3. **Transformaci&#243;n del conjunto de datos de entrada**, se realizara de diversas formas en funci&#243;n del an&#225;lisis previo, con el objetivo de prepararlo para aplicar la t&#233;cnica de miner&#237;a de datos que mejor se adapte a los datos y al problema, a este paso tambi&#233;n se le conoce como re procesamiento de los datos.
+
+
+4. **Seleccionar y aplicar la t&#233;cnica de miner&#237;a de datos**, se construye el modelo predictivo, de clasificaci&#243;n o segmentaci&#243;n.
+5. **Extracci&#243;n de conocimiento**, mediante una t&#233;cnica de miner&#237;a de datos, se obtiene un modelo de conocimiento, que representa patrones de comportamiento observados en los valores de las variables del problema o relaciones de asociaci&#243;n entre dichas variables. Tambi&#233;n pueden usarse varias t&#233;cnicas a la vez para generar distintos modelos, aunque generalmente cada t&#233;cnica obliga a un pre procesado diferente de los datos.
+6. **Interpretaci&#243;n y evaluaci&#243;n de datos**, una vez obtenido el modelo, se debe proceder a su validaci&#243;n comprobando que las conclusiones que arroja son v&#225;lidas y suficientemente satisfactorias. En el caso de haber obtenido varios modelos mediante el uso de distintas t&#233;cnicas, se deben comparar los modelos en busca de aquel que se ajuste mejor al problema. Si ninguno de los modelos alcanza los resultados esperados, debe alterarse alguno de los pasos anteriores para generar nuevos modelos.
+
+Si el modelo final no superara esta evaluaci&#243;n el proceso se podr&#237;a repetir desde el principio o, si el experto lo considera oportuno, a partir de cualquiera de los pasos anteriores. Esta retroalimentaci&#243;n se podr&#225; repetir cuantas veces se considere necesario hasta obtener un modelo valido.
+
+Una vez validado el modelo, si resulta ser aceptable (proporciona salidas adecuadas y/o con m&#225;rgenes de error admisibles) este ya est&#225; listo para su explotaci&#243;n. Los modelos obtenidos por t&#233;cnicas de miner&#237;a de datos se aplican incorpor&#225;ndolos en los sistemas de an&#225;lisis de informaci&#243;n de las organizaciones, e incluso, en los sistemas transaccionales. En este sentido cabe destacar los esfuerzos del Data Mining Group, que est&#225; estandarizando el lenguaje PMML (Predictive Model Markup Language), de manera que los modelos de miner&#237;a de datos sean interoperables en distintas plataformas, con independencia del sistema con el que han sido construidos. Los principales fabricantes de sistemas de bases de datos y programas de an&#225;lisis de la informaci&#243;n hacen uso de este est&#225;ndar.
+
+Tradicionalmente, las t&#233;cnicas de miner&#237;a de datos se aplicaban sobre informaci&#243;n contenida en almacenes de datos. De hecho, muchas grandes empresas e instituciones han creado y alimentan bases de datos especialmente dise&#241;adas para proyectos de miner&#237;a de datos en las que centralizan informaci&#243;n potencialmente &#250;til de todas sus &#225;reas de negocio. No obstante, actualmente est&#225; cobrando una importancia cada vez mayor la miner&#237;a de datos desestructurados como informaci&#243;n contenida en ficheros de texto, en Internet, etc.
+___
+
+**Ejemplos de uso de la miner&#237;a de datos**
+
+
+**Negocios**
+
+La miner&#237;a de datos puede contribuir significativamente en las aplicaciones de administraci&#243;n empresarial basada en la relaci&#243;n con el cliente. En lugar de contactar con el cliente de forma indiscriminada a trav&#233;s de un centro de llamadas o enviando e-mails, solo se contactara con aquellos que se perciba que tienen una mayor probabilidad de responder positivamente a una determinada oferta o promoci&#243;n.
+
+Las empresas que emplean miner&#237;a de datos ven habitualmente el retorno de la inversi&#243;n, pero tambi&#233;n reconocen que el n&#250;mero de modelos predictivos desarrollados puede crecer muy r&#225;pidamente. En lugar de crear modelos para predecir que clientes pueden cambiar, la empresa podr&#237;a construir modelos separados para cada regi&#243;n y/o para cada tipo de cliente. Tambi&#233;n puede querer determinar que clientes van a ser rentables durante una ventana de tiempo (una quincena, un mes, ...) y solo enviar las ofertas a las personas que es probable que sean rentables. Para mantener esta cantidad de modelos, es necesario gestionar las versiones de cada modelo y pasar a una miner&#237;a de datos lo m&#225;s automatizada posible.
+
+En un entorno tan cambiante donde los vol&#250;menes de datos medibles crece exponencialmente gracias al marketing digital,2 "las esperas producidas por dependencias de departamentos t&#233;cnicos y los expertos estadistas consiguen que finalmente los resultados de los an&#225;lisis sean inservibles" a los usuarios de negocio y decisores.3 Esto explica que los proveedores de herramientas de miner&#237;a de datos est&#233;n trabajando en aplicaciones m&#225;s f&#225;ciles de utilizar en lo que se conoce como miner&#237;a de datos visual4 y la demanda de empleo de este tipo de usuario analista de negocio se est&#233; disparando en los &#250;ltimos a&#241;os. Seg&#250;n Gartner es previsible que durante 2016-2017 solo haya "profesionales cualificados para cubrir una tercera parte de los puestos".
+
+**An&#225;lisis de la cesta de la compra**
+
+El ejemplo cl&#225;sico de aplicaci&#243;n de la miner&#237;a de datos tiene que ver con la detecci&#243;n de h&#225;bitos de compra en supermercados. Un estudio muy citado detecto que los viernes hab&#237;a una cantidad inusualmente elevada de clientes que adquir&#237;an a la vez pa&#241;ales y cerveza. Se detect&#243; que se deb&#237;a a que dicho d&#237;a sol&#237;an acudir al supermercado padres j&#243;venes cuya perspectiva para el fin de semana consist&#237;a en quedarse en casa cuidando de su hijo y viendo la televisi&#243;n con una cerveza en la mano. El supermercado pudo incrementar sus ventas de cerveza coloc&#225;ndolas pr&#243;ximas a los pa&#241;ales para fomentar las ventas compulsivas.
+
+**Patrones de fuga**
+
+Un ejemplo m&#225;s habitual es el de la detecci&#243;n de patrones de fuga. En muchas industrias como la banca, las telecomunicaciones, etc. existe un comprensible inter&#233;s en detectar cuanto antes aquellos clientes que puedan estar pensando en rescindir sus contratos para, posiblemente, pasarse a la competencia. A estos clientes y en funci&#243;n de su valor se les podr&#237;an hacer ofertas personalizadas, ofrecer promociones especiales, etc., con el objetivo &#250;ltimo de retenerlos. La miner&#237;a de datos ayuda a determinar que clientes son los m&#225;s proclives a darse de baja estudiando sus patrones de comportamiento y compar&#225;ndolos con muestras de clientes que, efectivamente, se dieron de baja en el pasado.
+
+**Fraudes**
+
+Un caso an&#225;logo es el de la detecci&#243;n de transacciones de lavado de dinero o de fraude en el uso de tarjetas de cr&#233;dito o de servicios de telefon&#237;a m&#243;vil e, incluso, en la relaci&#243;n de los contribuyentes con el fisco. Generalmente, estas operaciones fraudulentas o ilegales suelen seguir patrones caracter&#237;sticos que permiten, con cierto grado de probabilidad, distinguirlas de las leg&#237;timas y desarrollar as&#237; mecanismos para tomar medidas r&#225;pidas frente a ellas.
+
+**Recursos humanos**
+
+La miner&#237;a de datos tambi&#233;n puede ser &#250;til para los departamentos de recursos humanos en la identificaci&#243;n de las caracter&#237;sticas de sus empleados de mayor &#233;xito. La informaci&#243;n obtenida puede ayudar a la contrataci&#243;n de personal, centr&#225;ndose en los esfuerzos de sus empleados y los resultados obtenidos por estos. Adem&#225;s, la ayuda ofrecida por las aplicaciones para Direcci&#243;n estrat&#233;gica en una empresa se traducen en la obtenci&#243;n de ventajas a nivel corporativo, tales como mejorar el margen de beneficios o compartir objetivos; y en la mejora de las decisiones operativas, tales como desarrollo de planes de producci&#243;n o gesti&#243;n de mano de obra.
+
+**Comportamiento en Internet**
+
+Tambi&#233;n es un &#225;rea en boga el del an&#225;lisis del comportamiento de los visitantes sobre todo, cuando son clientes potenciales en una p&#225;gina de Internet. O la utilizaci&#243;n de la informaci&#243;n obtenida por medios m&#225;s o menos leg&#237;timos sobre ellos para ofrecerles propaganda adaptada espec&#237;ficamente a su perfil. O para, una vez que adquieren un determinado producto, saber inmediatamente que otro ofrecerle teniendo en cuenta la informaci&#243;n hist&#243;rica disponible acerca de los clientes que han comprado el primero.
+
+**Terrorismo**
+
+La miner&#237;a de datos ha sido citada como el m&#233;todo por el cual la unidad Able Danger del Ejercito de los EE. UU. hab&#237;a identificado al l&#237;der de los atentados del 11 de septiembre de 2001, Mohammed Atta, y a otros tres secuestradores del "11-S" como posibles miembros de una c&#233;lula de Al Qaeda que operan en los EE. UU. m&#225;s de un a&#241;o antes del ataque. Se ha sugerido que tanto la Agencia Central de Inteligencia y su hom&#243;loga canadiense, Servicio de Inteligencia y Seguridad Canadiense, tambi&#233;n han empleado este m&#233;todo.
+
+**Juegos**
+
+Desde comienzos de la d&#233;cada de 1960, con la disponibilidad de or&#225;culos para determinados juegos combi nacionales, tambi&#233;n llamados finales de juego de tablero (por ejemplo, para las tres en raya o en finales de ajedrez) con cualquier configuraci&#243;n de inicio, se ha abierto una nueva &#225;rea en la miner&#237;a de datos que consiste en la extracci&#243;n de estrategias utilizadas por personas para estos or&#225;culos. Los planteamientos actuales sobre reconocimiento de patrones, no parecen poder aplicarse con &#233;xito al funcionamiento de estos or&#225;culos. En su lugar, la producci&#243;n de patrones perspicaces se basa en una amplia experimentaci&#243;n con bases de datos sobre esos finales de juego, combinado con un estudio intensivo de los propios finales de juego en problemas bien dise&#241;ados y con conocimiento de la t&#233;cnica (datos previos sobre el final del juego). Ejemplos notables de investigadores que trabajan en este campo son Berlekamp en el juego de puntos-y-cajas (o Timbiriche) y John Nunn en finales de ajedrez.
+
+**Videojuegos**
+
+En el transcurrir de los a&#241;os las tecnolog&#237;as y los avances con relaci&#243;n a la miner&#237;a de datos se vieron involucrados en diferentes procesos de negocios y la industria de los videojuegos no se qued&#243; atr&#225;s en este campo, la necesidad por conocer a sus consumidores y el gusto de estos es parte fundamental para sobrevivir en un ambiente tan competitivo como lo es este, se necesitan de diferentes datos para antes de si quiera comenzar la idea de proyecto en un nuevo videojuego. Grandes compa&#241;&#237;as desarrolladoras han ca&#237;do bajo el manto de cancelaciones, p&#233;rdidas, fracasos y en casos hasta la misma quiebra por el mal manejo de la informaci&#243;n. En los &#250;ltimos a&#241;os estas empresas desarrolladoras de videojuegos entendieron la gran importancia del contenido que se maneja y como lo ve el consumidor por eso se enfocaron en la contrataci&#243;n de servicios de empresas especializadas en este sector de miner&#237;a de datos para poder presentar productos de calidad y que realmente gusten al p&#250;blico bas&#225;ndose en el an&#225;lisis de la informaci&#243;n obtenida en el transcurrir de los a&#241;os videojugabilisticos de su p&#250;blico objetivo.
+
+**Ciencia e Ingenier&#237;a**
+
+En los &#250;ltimos a&#241;os la miner&#237;a de datos se est&#225; utilizando ampliamente en diversas &#225;reas relacionadas con la ciencia y la ingenier&#237;a. Algunos ejemplos de aplicaci&#243;n en estos campos son:
+
+**Gen&#233;tica**
+
+En el estudio de la gen&#233;tica humana, el objetivo principal es entender la relaci&#243;n cartogr&#225;fica entre las partes y la variaci&#243;n individual en las secuencias del ADN humano y la variabilidad en la susceptibilidad a las enfermedades. En t&#233;rminos m&#225;s llanos, se trata de saber c&#243;mo los cambios en la secuencia de ADN de un individuo afectan al riesgo de desarrollar enfermedades comunes (como por ejemplo el c&#225;ncer). Esto es muy importante para ayudar a mejorar el diagn&#243;stico, prevenci&#243;n y tratamiento de las enfermedades. La t&#233;cnica de miner&#237;a de datos que se utiliza para realizar esta tarea se conoce como "reducci&#243;n de dimensional dad multifactorial".
+
+**Ingenier&#237;a el&#233;ctrica**
+
+En el &#225;mbito de la ingenier&#237;a el&#233;ctrica, las t&#233;cnicas de miner&#237;a de datos han sido ampliamente utilizadas para monitorizar las condiciones de las instalaciones de alta tensi&#243;n. La finalidad de esta monitorizaci&#243;n es obtener informaci&#243;n valiosa sobre el estado del aislamiento de los equipos. Para la vigilancia de las vibraciones o el an&#225;lisis de los cambios de carga en transformadores se utilizan ciertas t&#233;cnicas para agrupaci&#243;n de datos (clustering) tales como los mapas auto-organizativos (SOM: Self-organizing map). Estos mapas sirven para detectar condiciones anormales y para estimar la naturaleza de dichas anomalias.
+
+**An&#225;lisis de gases**
+
+Tambi&#233;n se han aplicado t&#233;cnicas de miner&#237;a de datos para el an&#225;lisis de gases disueltos (DGA: Dissolved gas analysis) en transformadores el&#233;ctricos. El an&#225;lisis de gases disueltos se conoce desde hace mucho tiempo como la herramienta para diagnosticar transformadores. Los mapas auto-organizativos (SOM) se utilizan para analizar datos y determinar tendencias que podr&#237;an pasarse por alto utilizando las t&#233;cnicas cl&#225;sicas (DGA).
+____
+
+##Tecnolog&#237;a de miner&#237;a de datos##
+
+En algunos informes, como el conocido Informe Gartner,  la miner&#237;a de datos aparece como una de las tecnolog&#237;as
+de m&#225;s &#233;xito en un futuro pr&#243;ximo. En esta secci&#243;n relacionaremos la miner&#237;a de datos con otra &#225;rea
+m&#225;s extensa llamada descubrimiento del conocimiento y compararemos ambas mediante un ejemplo ilustrativo.
+
+### Comparaci&#243;n entre miner&#237;a de datos y almacenes de datos###
+
+El objetivo de un almac&#233;n de datos  es ayudar a la toma de decisiones basadas en los
+datos. La miner&#237;a de datos puede ser usada en combinaci&#243;n con un almac&#233;n de datos para ayudar a la toma de
+determinados tipos de decisiones. La miner&#237;a de datos se puede aplicar a las bases de datos operacionales en
+las transacciones individuales. Para que la miner&#237;a de datos sea m&#225;s eficaz, el almac&#233;n de datos deber&#237;a disponer
+de un conjunto de datos agregado o resumido. La miner&#237;a de datos ayuda en la extracci&#243;n de nuevos
+patrones con significado que no se mostrar&#237;an s&#243;lo con efectuar consultas o procesar los datos o metadatos del
+almac&#233;n de datos. Seg&#250;n esto, las aplicaciones de miner&#237;a de datos deber&#237;an ser tenidas en cuenta en las primeras
+fases del dise&#241;o de un almac&#233;n de datos. Adem&#225;s, las herramientas de miner&#237;a de datos deber&#237;an ser
+dise&#241;adas para facilitar su uso en conjunci&#243;n con los almacenes de datos. De hecho, en el caso de bases de
+datos de gran tama&#241;o que trabajan con terabytes de datos, el uso provechoso de las aplicaciones de miner&#237;a
+de datos depender&#225; principalmente de la construcci&#243;n de un almac&#233;n de datos.
+
+
+
+###Objetivos de la miner&#237;a de datos y el descubrimiento de conocimiento###
+
+La miner&#237;a de datos se suele realizar habitualmente con ciertos objetivos o para determinadas aplicaciones
+finales. En t&#233;rminos generales, estos objetivos se pueden clasificar en los tipos siguientes: predicci&#243;n, identificaci&#243;n,
+clasificaci&#243;n y optimizaci&#243;n.
+- Predicci&#243;n. La miner&#237;a de datos puede mostrar c&#243;mo se comportar&#225;n en el futuro determinados atributos
+de los datos. Entre los ejemplos de predicciones de datos podemos incluir el an&#225;lisis de transacciones
+de compra para predecir qu&#233; comprar&#225;n los consumidores ante determinados descuentos, qu&#233;
+volumen de ventas se generar&#225; en una tienda en un periodo determinado y si la eliminaci&#243;n de una l&#237;nea
+de productos generar&#225; m&#225;s beneficios. En aplicaciones de este tipo, la l&#243;gica de negocio se utiliza unida
+a la miner&#237;a de datos. En un contexto cient&#237;fico, determinados patrones de ondas s&#237;smicas podr&#237;an predecir
+un terremoto con una probabilidad alta.
+- Identificaci&#243;n. Los patrones de datos se pueden utilizar para identificar la existencia de un objeto, un
+evento o una actividad. Por ejemplo, es posible identificar a los intrusos que intentan introducirse en
+un sistema mediante los programas que han sido ejecutados, los archivos que han sido accedidos y el
+tiempo de CPU por sesi&#243;n. En las aplicaciones de biolog&#237;a, es posible identificar la existencia de un
+gen a partir de determinadas secuencias de s&#237;mbolos nucle&#243;tidos en la cadena del ADN. El &#225;rea conocida
+como autenticaci&#243;n es una forma de identificaci&#243;n. Se encarga de asegurar si un usuario es en realidad
+un usuario en concreto o uno perteneciente a una clase autorizada, e implica una comparaci&#243;n de
+par&#225;metros, de im&#225;genes o de se&#241;ales con una base de datos.
+- Clasificaci&#243;n. La miner&#237;a de datos puede dividir los datos de forma que sea posible identificar distintas
+clases o categor&#237;as bas&#225;ndose en combinaciones de par&#225;metros. Por ejemplo, los clientes de un
+supermercado se pueden clasificar en buscadores de descuentos, compradores con poco tiempo, compradores
+fieles a la tienda, compradores de productos de marca conocida y compradores no frecuentes.
+Esta clasificaci&#243;n se puede utilizar en diferentes an&#225;lisis de transacciones de compra de los clientes
+como actividad post-miner&#237;a. A veces, la clasificaci&#243;n basada en el conocimiento de dominio com&#250;n
+se utiliza como entrada para descomponer el problema de miner&#237;a y hacerlo m&#225;s sencillo. Por ejemplo,
+alimentos saludables, alimentos para fiestas y alimentos para comedores escolares son categor&#237;as diferentes
+en el negocio de los supermercados. Tiene sentido analizar las relaciones entre las categor&#237;as y
+dentro de ellas como problemas independientes. Se puede usar esta categorizaci&#243;n para codificar los
+datos de forma apropiada antes de someterlos posteriormente a la miner&#237;a de datos.
+- Optimizaci&#243;n. Un posible objetivo de la miner&#237;a de datos podr&#237;a ser la optimizaci&#243;n del uso de recursos
+limitados como el tiempo, el espacio, el dinero o los bienes materiales y la maximizaci&#243;n de variables
+de salida como las ventas o los beneficios obtenidos con determinadas limitaciones.
+
+### Tipos de conocimiento adquirido durante la miner&#237;a de datos###
+
+El t&#233;rmino conocimiento se entiende por lo general como algo que implica cierto grado de inteligencia. Existe
+una progresi&#243;n desde los simples datos a la informaci&#243;n y despu&#233;s al conocimiento a medida que vamos aplicando
+m&#225;s procesamiento. A veces se clasifica al conocimiento como algo inductivo en lugar de algo deductivo.
+El conocimiento deductivo deduce la nueva informaci&#243;n bas&#225;ndose en la aplicaci&#243;n de reglas l&#243;gicas
+de deducci&#243;n pre-especificadas sobre unos datos en concreto. La miner&#237;a de datos trata con el conocimiento
+inductivo, mediante el cual se descubren nuevas reglas y patrones a partir de los datos suministrados. El conocimiento
+se puede representar de varias formas. En un sentido no estructurado, se puede representar mediante
+reglas o l&#243;gica proposicional. En forma estructurada, se puede representar mediante &#225;rboles de decisi&#243;n,
+redes sem&#225;nticas, redes neuronales o jerarqu&#237;as de clases o marcos. Es habitual describir el conocimiento
+adquirido durante la miner&#237;a de datos seg&#250;n se muestra a continuaci&#243;n:
+- Reglas de asociaci&#243;n. Estas reglas relacionan la presencia de un conjunto de objetos con otro rango
+de valores en otro conjunto de variables. Ejemplos: (1) Cuando un cliente de sexo femenino compra
+un bolso, es probable que compre zapatos. (2) Una imagen de rayos X que contenga ciertas caracter&#237;sticas
+a y b, contendr&#225; probablemente tambi&#233;n la caracter&#237;stica c.
+- Jerarqu&#237;as de clasificaci&#243;n. El objetivo es trabajar a partir de un conjunto existente de eventos o transacciones
+para crear una jerarqu&#237;a de clases. Ejemplos: (1) Se puede dividir una poblaci&#243;n en cinco rangos
+de valoraci&#243;n de cr&#233;dito bas&#225;ndose en el historial de las transacciones de cr&#233;dito anteriores. (2) Es
+posible desarrollar un modelo para calcular los factores que determinan la idoneidad de la ubicaci&#243;n
+de una tienda en una escala de 1 a 10. (3) Los fondos de inversi&#243;n se pueden clasificar bas&#225;ndose en
+los datos de resultados utilizando caracter&#237;sticas como crecimiento, ingresos y estabilidad.
+- Patrones secuenciales. Aqu&#237; se busca una secuencia de acciones o eventos. Ejemplo: Si un paciente
+ha sido sometido a cirug&#237;a cardiaca por tener arterias bloqueadas y aneurisma y posteriormente se le
+detecta un nivel alto de urea en sangre transcurrido un a&#241;o desde la operaci&#243;n, es posible que sufra de
+fallos renales en los siguientes 18 meses. La detecci&#243;n de patrones secuenciales es equivalente a la
+detecci&#243;n de asociaciones entre eventos con determinadas relaciones temporales.
+- Patrones dentro de series temporales. Es posible detectar parecidos dentro de las posiciones de una
+serie temporal de datos, que es una secuencia de datos tomados a intervalos regulares como, por ejemplo,
+las ventas diarias o los precios de las acciones al cierre de la bolsa. Ejemplos: (1) Las acciones de
+una empresa de suministros, ABC Power, y de una compa&#241;&#237;a financiera, XYZSecurities, han seguido
+el mismo patr&#243;n durante el a&#241;o 2002 en t&#233;rminos de precio al cierre de la sesi&#243;n de bolsa. (2) Dos productos
+ siguen el mismo patr&#243;n de venta durante el verano, pero distinto en el invierno. (3) Un patr&#243;n
+detectado en los vientos solares magn&#233;ticos podr&#237;a utilizarse para predecir cambios en las condiciones
+atmosf&#233;ricas de la Tierra.
+- Agrupamiento. Una poblaci&#243;n determinada de eventos o elementos puede ser dividida (segmentada)
+en conjuntos de elementos "similares". Ejemplos: (1) Una poblaci&#243;n entera de datos de tratamientos
+para una enfermedad se puede dividir en grupos bas&#225;ndose en el parecido de los efectos secundarios
+producidos. (2) La poblaci&#243;n adulta de los Estados Unidos se puede dividir en grupos desde el que
+tiene mayor probabilidad de comprar hasta el que tiene menor probabilidad de comprar un nuevo producto.
+(3) Los accesos a la Web realizados por un grupo de usuarios en un conjunto de documentos
+(por ejemplo, en una biblioteca digital) pueden ser analizados en t&#233;rminos de palabras clave de documentos.
+para obtener agrupamientos o categor&#237;as de usuarios.

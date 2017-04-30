@@ -1,0 +1,163 @@
+#Reglas de asociaci&#243;n
+
+## El modelo de la cesta de la compra, soporte y confianza##
+
+Una de las principales tecnolog&#237;as dentro de la miner&#237;a de datos tiene relaci&#243;n con el descubrimiento de reglas
+de asociaci&#243;n. La base de datos se ve como un conjunto de transacciones, cada una de ellas relacionada con
+un conjunto de elementos. Un ejemplo habitual es el de la cesta de la compra. En este caso, la cesta de la
+compra se corresponde con el conjunto de elementos que compra un consumidor en un supermercado durante
+su visita. Tomemos cuatro transacciones de ese tipo en el ejemplo tomado al azar de la imagen.
+
+![silumaicon virtual](images/5.png)
+
+Una regla de asociaci&#243;n tiene el aspecto de X => Y, donde X = {xl' X2' ... , Xn}, e Y = {Y&#241;, Y2> ... , Yrn} son conjuntos
+de elementos, siendo Xi e Yj elementos distintos para todo i y todo j. Esta asociaci&#243;n significa que si un
+cliente compra X, tambi&#233;n comprar&#225; probablemente Y. En general, cualquier regla de asociaci&#243;n tiene la forma
+LHS (t&#233;rmino izquierdo) => RHS (t&#233;rmino derecho), donde LHS y RHS son conjuntos de elementos. Al conjunto
+LHS U RHS se le denomina conjunto de elementos o itemset, el conjunto de elementos adquiridos por
+los compradores. Para que una regla de asociaci&#243;n resulte interesante en la miner&#237;a de datos, la regla deber&#237;a
+satisfacer alguna medida de inter&#233;s. Dos medidas de inter&#233;s habituales son el soporte y la confianza.
+El soporte de una regla LHS => RHS se calcula con respecto al conjunto; indica con qu&#233; frecuencia aparece
+un conjunto determinado en la base de datos. Es decir, el soporte es el porcentaje de transacciones que contienen
+todos los elementos del conjunto, LHS U RHS. Si el soporte es bajo, implica que no hay una evidencia
+abrumadora de que los elementos en LHS U RHS aparezcan juntos, ya que el conjunto aparece en s&#243;lo un
+peque&#241;o n&#250;mero de transacciones. Otro nombre que se le da al soporte es cobertura de la regla.
+La confianza tiene relaci&#243;n con la implicaci&#243;n mostrada en la regla. La confianza de la regla LHS => RHS
+se calcula como soporte(LHS U RHS)/soporte(LHS). Podemos considerarlo como la probabilidad de que los
+elementos de RHS sean comprados en el supuesto de que los elementos de LHS sean comprados por un cliente.
+A la confianza tambi&#233;n se le denomina fuerza de la regla.
+Como ejemplo de soporte y confianza, tomemos las dos reglas siguientes: leche => zumo y pan => zumo.
+Echando un vistazo a nuestras cuatro transacciones de ejemplo en la Figura 28.1, veremos que el soporte de
+{leche, zumo} es 50% y que el soporte de {pan, zumo} es solo 25%. La confianza de leche => zumo es 66,7%
+(lo cual significa que de cada tres transacciones en las que aparece la leche, en dos de ellas aparece tambi&#233;n
+el zumo) y la confianza de pan => zumo es 50% (significa que en una de cada dos transacciones en las que
+aparece el pan tambi&#233;n aparece el zumo).
+Seg&#250;n se puede observar, el soporte y la confianza no van acompa&#241;ados necesariamente. El objetivo de las
+reglas de asociaci&#243;n en la miner&#237;a es, por tanto, generar todas las reglas posibles que superen alg&#250;n umbral
+m&#237;nimo de soporte y confianza especificado por el usuario. El problema se descompone, seg&#250;n esto, en dos
+subproblemas.
+- 1. Generaci&#243;n de todos los conjuntos que tienen un soporte que supere el umbral. A estos conjuntos de
+elementos se les denomina conjuntos grandes (o frecuentes). Observe que grande significa, en este
+caso, de soporte grande.
+- 2. Para cada conjunto frecuente, todas las reglas que tienen un valor m&#237;nimo de confianza se generan
+seg&#250;n se muestra a continuaci&#243;n: Para un conjunto frecuente X y siendo Y e X, tomemos Z = X -
+Y; entonces si soporte (X)/soporte (Z) > confianza m&#237;nima, la regla Z => y (es decir, X-y => Y) es
+una regla v&#225;lida.
+
+## Algoritmo de muestreo##
+La idea principal del **algoritmo de muestreo** es seleccionar una peque&#241;a muestra, una que quepa en memoria
+principal, de la base de datos de transacciones y determinar los conjuntos frecuentes en esa muestra. 
+esos conjuntos frecuentes forman un superconjunto de los conjuntos frecuentes de la base de datos completa,
+entonces podemos determinar los conjuntos frecuentes reales explorando el resto de la base de datos para calcular
+los valores exactos de soporte para los conjuntos superconjunto. Por lo general, es posible encontrar un
+superconjunto de los conjuntos frecuentes a partir de la muestra utilizando, por ejemplo, el algoritmo Apriori
+con el soporte m&#237;nimo m&#225;s peque&#241;o.
+En algunos casos extra&#241;os, es posible que falten algunos conjuntos frecuentes y se necesitar&#225; una segunda
+exploraci&#243;n de la base de datos. Para decidir si faltan algunos conjuntos frecuentes se utiliza el concepto de
+borde negativo. El borde negativo con respecto a un conjunto frecuente S y un conjunto de elementos 1 son
+los conjuntos m&#225;s peque&#241;os contenidos en PowerSet(1) y no en S. La idea b&#225;sica es que el borde negativo de
+un conjunto de conjuntos frecuentes contiene los conjuntos m&#225;s cercanos que podr&#237;an ser tambi&#233;n frecuentes.
+Tomemos el caso en el cual un conjunto X no est&#225; contenido en los conjuntos frecuentes. Si todos los subconjuntos
+de X est&#225;n contenidos en el conjunto de los conjuntos frecuentes, entonces X estar&#237;a en el borde negativo.
+Ilustraremos esto con el siguiente ejemplo. Tomemos el conjunto de elementos 1 = {A, B, C, D, E} Y supongamos
+que los conjuntos frecuentes combinados de tama&#241;o 1 a 3 son S = {{A}, {B}, {C}, {D}, {AB}, {AC},
+{BC}, {AD}, {CD}, {ABC}}. El borde negativo es {{E}, {BD}, {ACD}}. El conjunto {E} es el &#250;nico 1-
+conjunto que no est&#225; contenido en S, {BD} es el &#250;nico 2-conjunto que no est&#225; en S pero cuyos subconjuntos
+de l-conjuntos lo est&#225;n, y {ACD} es el &#250;nico 3-conjunto cuyos subconjuntos 2-conjunto est&#225;n todos en S. El
+borde negativo es importante ya que es necesario para determinar el soporte para aquellos conjuntos que se
+encuentran en el borde negativo para asegurar que no falta ning&#250;n conjunto grande tras analizar los datos de
+muestra.
+El soporte para el borde negativo se determina cuando se explora el resto de la base de datos. Si descubrimos
+que un conjunto X en el borde negativo se encuentra en el conjunto de todos los conjuntos frecuentes, entonces
+existe la posibilidad de que un superconjunto de X sea tambi&#233;n frecuente. Si sucede esto, se necesita una
+segunda pasada en la base de datos para aseguramos de encontrar todos los conjuntos frecuentes.
+
+## Reglas de asociaci&#243;n##
+
+Reglas de asociaci&#243;n entre jerarqu&#237;as. Existen determinados tipos de asociaciones que son particularmente
+interesantes por un motivo especial. Estas asociaciones se producen entre jerarqu&#237;as de elementos. Por
+lo general, es posible dividir los elementos entre jerarqu&#237;as disjuntas bas&#225;ndose en la naturaleza del dominio.
+Por ejemplo, los alimentos en un supermercado, los art&#237;culos en unos grandes almacenes o los art&#237;culos en una
+tienda de deportes se pueden dividir en clases y subclases que den origen a las jerarqu&#237;as. Observe la,imagen 
+en la que se muestra la clasificaci&#243;n de elementos en un supermercado. La figura muestra dos jerarqu&#237;as:
+bebidas y postres. Los grupos completos podr&#237;an no generar asociaciones de la forma bebidas => postres, o
+postres => bebidas. Sin embargo, las asociaciones del tipo Yogur refrigerado de marca diet&#233;tica => agua
+embotellada, o helado de la marca Richcream => enfriador de vinos podr&#237;an producir suficiente confianza y
+soporte para ser reglas de asociaci&#243;n v&#225;lidas de inter&#233;s.
+Por tanto, si en el &#225;rea de aplicaci&#243;n existe una clasificaci&#243;n natural de los elementos en jerarqu&#237;as, la b&#250;squeda
+de asociaciones dentro de las jerarqu&#237;as no resulta de inter&#233;s. Las que son de inter&#233;s espec&#237;fico son las asociaciones
+entre jerarqu&#237;as. Se pueden producir entre agrupaciones de elementos en diferentes niveles.
+Asociaciones multidimensionales. El descubrimiento de reglas de asociaci&#243;n implica la b&#250;squeda de
+patrones en un archivo. Al comienzo de la secci&#243;n de miner&#237;a de datos, vimos un ejemplo de un archivo
+de transacciones de cliente con tres dimensiones: Id_transacci&#243;n, Hora y Art&#237;culos_comprados. Sin embargo,
+los procesos de miner&#237;a de datos presentados hasta este momento s&#243;lo act&#250;an sobre una dimensi&#243;n:
+Art&#237;culos_comprados. La siguiente regla es un ejemplo donde incluimos la etiqueta de la &#250;nica dimensi&#243;n:
+Art&#237;culos comprados (leche ) => Art&#237;culos comprados(zumo). Podr&#237;a resultar de inter&#233;s encontrar reglas
+de asociaci&#243;n que act&#250;en sobre varias dimensiones, por ejemplo, Hora(6:30 .. 8:00) => Art&#237;culos_comprados(
+leche). Las reglas de este tipo se denominan reglas de asociaci&#243;n multidimensional. Las dimensiones
+representan atributos de registros de un archivo o, en t&#233;rminos de relaciones, las columnas de las filas de una
+relaci&#243;n, y pueden ser categ&#243;ricos o cuantitativos. Los atributos categ&#243;ricos tienen un conjunto finito de
+valores que no muestran relaci&#243;n de orden. Los atributos cuantitativos son num&#233;ricos y con valores que muestran
+una relaci&#243;n de orden, por ejemplo, < Art&#237;culos_comprados es un ejemplo de atributo categ&#243;rico e
+Id_transacci&#243;n y Hora son cuantitativos.
+Un mecanismo para tratar los atributos cuantitativos es particionar sus valores en intervalos que no se solapen
+a los cuales se les asigna etiquetas. Esto se puede hacer de una forma est&#225;tica bas&#225;ndose en el conocimiento
+espec&#237;fico del dominio. Por ejemplo, una jerarqu&#237;a conceptual podr&#237;a agrupar los valores de salario en
+tres clases distintas: ingresos bajos (O < Salario < 29.999), ingresos medios (30.000 < Salario < 74.999) e
+ingresos altos (Salario> 75.000). A partir de esto, se puede utilizar el algoritmo normal de tipo Apriori o una
+de sus variantes para la regla de miner&#237;a ya que ahora los atributos cuantitativos tienen el aspecto de atributos
+categ&#243;ricos. Otro modelo posible para realizar el particionado es agrupar los valores de atributo bas&#225;ndose
+en la distribuci&#243;n de los datos, por ejemplo, el m&#233;todo de partici&#243;n equitativa y la asignaci&#243;n de valores
+enteros a cada partici&#243;n. El particionado a este nivel puede estar relativamente afinado, es decir, con un gran
+n&#250;mero de intervalos. Posteriormente, durante el proceso de miner&#237;a, se pueden combinar estas particiones
+con otras particiones adyacentes si su soporte es menor que alg&#250;n valor m&#225;ximo predefinido. Tambi&#233;n se
+puede utilizar aqu&#237; un algoritmo del tipo Apriori para la miner&#237;a de datos.
+
+![silumaicon virtual](images/6.png)
+
+##Asociaciones negativas##
+
+El problema de la b&#250;squeda de una asociaci&#243;n negativa es mucho m&#225;s complicado
+que en el caso de una asociaci&#243;n positiva. Una asociaci&#243;n negativa es una asociaci&#243;n del tipo siguiente:
+el 60% de los clientes que compran patatas fritas no compran agua embotellada. (Aqu&#237;, el 60% se refiere a
+la confianza en la regla de asociaci&#243;n negativa.) En una base de datos con 10.000 art&#237;culos existen 210000 combinaciones
+posibles de art&#237;culos, la mayor&#237;a de los cuales no aparecen ni una sola vez en la base de datos. Si
+la ausencia de determinada combinaci&#243;n de art&#237;culos va a ser tomada como una asociaci&#243;n negativa, entonces
+potencialmente tendr&#237;amos millones y millones de reglas de asociaci&#243;n negativa con RHSs que no son de
+inter&#233;s en absoluto. El problema, entonces, ser&#225; encontrar s&#243;lo las reglas negativas interesantes. En general,
+lo que nos interesa son los casos en los que dos conjuntos de elementos determinados aparecen con muy poca
+frecuencia en la misma transacci&#243;n. Esto provoca dos problemas.
+1. Para un inventario total de art&#237;culos de 10.000 elementos, la probabilidad de que dos de ellos sean comprados
+a la vez es (1/10.000) * (1/10.000) = 10-8. Si descubrimos que el soporte real cuando esos dos
+art&#237;culos aparecen juntos es O, no significa una desviaci&#243;n de los resultados esperados y, por tanto, no
+se trata de una asociaci&#243;n (negativa) interesante.
+2. El otro problema es m&#225;s serio. Estamos buscando combinaciones de art&#237;culos con soporte muy bajo y
+hay millones y millones con soporte bajo o incluso igual a O. Por ejemplo, a un conjunto de datos de
+10 millones de transacciones le faltan la mayor&#237;a de los 2.500 millones de combinaciones de pares de
+10.000 elementos. Esto generar&#237;a miles de millones de reglas in&#250;tiles.
+Por tanto, para obtener reglas de asociaci&#243;n negativas de inter&#233;s, debemos utilizar el conocimiento previo
+sobre los conjuntos. Una posibilidad es la utilizaci&#243;n de jerarqu&#237;as. Supongamos que utilizamos las jerarqu&#237;as
+de bebidas no alcoh&#243;licas y patatas fritas que aparecen en la Figura 28.4.
+Aparece una fuerte asociaci&#243;n positiva entre las bebidas no alcoh&#243;licas y las patatas fritas. Si encontr&#225;semos
+un soporte grande para el hecho de que cuando los clientes compran patatas Days comprar&#225;n preferentemente
+Topsy y no Joke y tampoco Wakeup, resultar&#237;a interesante ya que normalmente lo que se esperar&#237;a es que
+si existe una fuerte asociaci&#243;n entre Days y Topsy, deber&#237;a tambi&#233;n existir una fuerte asociaci&#243;n entre Days y
+Joke o entre Days y Wakeup.
+En los agrupamientos entre yogur refrigerado yagua embotellada que aparecen en la Figura 28.3 supongamos
+que la divisi&#243;n entre las marcas Reduce y Healthy es 80-20 y que la divisi&#243;n entre las marcas Plain y Clear
+es 60-40 entre las categor&#237;as respectivas. Esto nos dar&#237;a una probabilidad de asociaci&#243;n de que el yogurt refrigerado 
+fuese comprado junto con el agua embotellada Plain del 48% entre las transacciones que contuviesen
+yogurt refrigerado yagua embotellada. En el caso de que este soporte resultase ser s&#243;lo del 20%, nos indicar&#237;a
+una asociaci&#243;n negativa significativa entre el yogurt Reduce y el agua embotellada Plain; de nuevo, esto
+resultar&#237;a de inter&#233;s.
+El problema de la b&#250;squeda de asociaciones negativas es importante en las situaciones anteriores dado el
+conocimiento de dominio en forma de jerarqu&#237;as de generalizaci&#243;n de art&#237;culos (es decir, las bebidas y postres
+que se muestran en la imagen), las asociaciones positivas existentes (como por ejemplo la que existe
+entre los grupos de yogurt refrigerado yagua embotellada) y la distribuci&#243;n de art&#237;culos (como la de los
+nombres de marcas dentro de los grupos mencioriados). El grupo de bases de datos de Georgia Tech ha realizado
+informes sobre investigaciones en este contexto (consulte la Bibliografia seleccionada de este cap&#237;tulo).
+El &#225;mbito de descubrimiento de asociaciones negativas se encuentra limitado por el conocimiento de las jerarqu&#237;as
+y la distribuci&#243;n de los art&#237;culos. El crecimiento exponencial de las asociaciones negativas es todav&#237;a
+un reto.
+
+![silumaicon virtual](images/7.png)

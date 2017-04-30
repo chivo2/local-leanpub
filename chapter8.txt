@@ -1,0 +1,52 @@
+#Clasificaci&#243;n
+
+La clasificaci&#243;n es el proceso de aprendizaje de un modelo que describe diferentes clases de datos. Las clases
+est&#225;n predeterminadas. Por ejemplo, en una aplicaci&#243;n bancaria, los clientes que solicitan una tarjeta de
+cr&#233;dito se podr&#237;an clasificar como de bajo riesgo, riesgo medio y alto riesgo. Debido a lo anterior, a esta actividad
+se la denomina tambi&#233;n aprendizaje supervisado. Una vez que se ha construido el modelo se puede
+utilizar para clasificar nuevos datos. El primer paso de aprendizaje del modelo se lleva a cabo utilizando un
+conjunto de datos de entrenamiento que ya haya sido clasificado. Cada registro de los datos de entrenamiento
+contiene un atributo, llamado etiqueta de clase, que indica a qu&#233; clase pertenece el registro. El modelo
+resultante tiene por lo general la forma de un &#225;rbol de decisi&#243;n o de un conjunto de reglas. Algunos de los
+temas importantes en relaci&#243;n con el modelo y con el algoritmo que genera el modelo son la capacidad del
+modelo para predecir la clasificaci&#243;n correcta de los nuevos datos, el coste computacional asociado al algoritmo
+y la escalabilidad del algoritmo.
+Revisaremos el modelo cuando &#233;ste tiene la forma de un &#225;rbol de decisi&#243;n. Un &#225;rbol de decisi&#243;n es simplemente
+una representaci&#243;n gr&#225;fica de la descripci&#243;n de cada una de las clases o, en otras palabras, una representaci&#243;n
+de las reglas de clasificaci&#243;n. En la Figura 28.5 se muestra un ejemplo de &#225;rbol de decisi&#243;n.
+Podemos observar en la imagen que si un cliente est&#225; casado y su salario es >= 50K, entonces es de bajo
+riesgo para la tarjeta de cr&#233;dito del banco. &#233;sta es una de las reglas que describen la clase bajo riesgo. Al recorrer
+el &#225;rbol desde la ra&#237;z hasta cada uno de los nodos hoja, se forman otras reglas para esta clase y las otras
+dos clases. El Algoritmo 28.3 muestra el procedimiento de construcci&#243;n de un &#225;rbol de decisi&#243;n a partir de un
+conjunto de datos de entrenamiento. Inicialmente, todas las muestras de entrenamiento se encuentran en la
+ra&#237;z del &#225;rbol. Las muestras se dividen de forma recursiva bas&#225;ndose en los atributos seleccionados. El atributo
+usado en un nodo para dividir las muestras es aquel con el mejor criterio de divisi&#243;n, por ejemplo, aquel
+que maximiza la medida de ganancia de informaci&#243;n.
+
+![silumaicon virtual](images/8.png)
+
+## Algoritmo para generaci&#243;n de un &#225;rbol de decisi&#243;n##
+
+Entrada: Conjunto de registros de datos de entrenamiento: R&#241; , R2, ... , Rm Y conjunto de atributos:
+A&#241;,A2, ... , An
+Salida: &#225;rbol de decisi&#243;n
+procedimiento Construir_&#225;rbol (registros, atributos);
+Inicio
+crear un nodo N;
+IF todos los registros pertenecen a la misma clase, C TREN
+retomar N como nodo hoja con etiqueta de clase C;
+IF atributos est&#225; vac&#237;o TREN
+retomar N como nodo hoja con etiqueta de clase C, de forma que la mayor&#237;a de los
+registros pertenezcan a &#233;l;
+seleccionar atributo A&#241; (con la mayor ganancia de informaci&#243;n) en los atributos;
+etiquetar el nodo N con A&#241;;
+para cada valor conocido, vi' de Ai hacer
+Fin;
+inicio
+a&#241;adir una rama al nodo N para la condici&#243;n Ai = vi;
+Si = subconjunto de registros donde Ai = vi;
+1F ~ est&#225; vac&#237;o TREN
+A&#241;adir una hoja, L, con etiqueta de clase, de forma que la mayor&#237;a de los
+registros pertenezcan a ella y devolver L
+ELSE a&#241;adir el nodo devuelto por Construir _ &#225;rbol(~, atributos - A&#241;);
+fin;
